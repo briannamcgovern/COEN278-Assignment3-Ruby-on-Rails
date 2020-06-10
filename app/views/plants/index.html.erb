@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<div class="plants">
+<table class="list">
+  <tbody>
+    <% @plants.each do |plant| %>
+      <tr>
+        <td rowspan="2"><img src=<%= plant.image_url %> class="plant-img"></td>
+        <td class="info" id="name"><%= plant.name %></td>
+        <td class="info" id="price"><%= plant.price %></td>
+        <td class="info" id="size"><%= plant.size %></td>
+      </tr>
+      <tr>
+        <td colspan="3" id="descript"><%= plant.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
