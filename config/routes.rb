@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
-#  get 'plants/index'
   root to: 'plants#index'
-#  resources :products
-
   resources :plants
+  resources :users
+  resource :sessions
+  
+  get 'users/new'
+  get 'sessions/login'
 
-#  get '/'
-#  get 'home/'
-  get 'home/page1'
-  get 'home/page2'
+  get :Signup, :to => 'users#new'
+  post :Signup, :to => 'sessions#login'
+  get :Login, :to => 'sessions#login'
+  post :Login, :to => 'plants#index'
+  get :Logout, :to => 'sessions#logout'
+  post :Logout, :to => 'plants#index'
+
 end
