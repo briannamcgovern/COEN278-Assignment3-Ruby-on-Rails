@@ -1,0 +1,10 @@
+<h2>Shopping Cart</h2>
+<div class='cart'>
+  <ul>
+    <% @cart.each do |item|  %>
+    <li><%= render :partial => 'cart', :object => item %></li>
+    <% end %>
+  <ul>
+  <p id='cart-total'><strong>Total: $0</strong></p>
+        
+</div>

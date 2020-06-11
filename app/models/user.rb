@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :plants
+
   attr_accessor :password
   EMAIL_REGEX = /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\z/i
   validates :username, :presence => true, :uniqueness => true, :length => { :in => 3..20 }

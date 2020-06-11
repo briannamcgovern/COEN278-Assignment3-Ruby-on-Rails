@@ -6,12 +6,17 @@ class SessionsController < ApplicationController
     authorized_user = User.authenticate(params[:username_or_email],params[:login_password])
     if authorized_user
       flash[:notice] = "Welcome, you logged in as #{authorized_user.username}"
-      redirect_to(:controller => 'plants', :action => 'index')
+#      redirect_to(:controller => 'plants', :action => 'index')
     else
       flash[:notice] = "Invalid Username or Password"
       flash[:color]= "invalid"
       render "login"	
     end
+  end
+
+  def logout
+    session[:user_id] = nil
+    redirect_to(:controller => 'plants', :action => 'index')
   end
 
 end

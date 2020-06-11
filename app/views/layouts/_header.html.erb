@@ -2,17 +2,17 @@
   <div class="header">
     <h1 class="logo"><%=link_to "Plants on Rails", "" %></h1>
     <div class="nav">
-    <% unless session[:user_id] %>
+    <% if session[:user_id] %>
       <ul class="nav">
-        <li class="nav"><%=link_to "Sign Up", "/users/new" %></li>
-        <li class="nav"><%=link_to "Login", "/sessions/login" %></li>
-        <li class="nav"><%=link_to "Page 1", "/home/page1" %></li>
-        <li class="nav"><%=link_to "Page 2", "/home/page2" %></li>
+        <li class="nav"><%=link_to "Logout", "/sessions/logout" %></li>
+        <li class="nav" id="cart"><%=link_to "Cart", "/cart/show" %></li>
       </ul>
     <% else %>
-        <li class="nav"><%=link_to "Logout", "/sessions/logout" %></li>
-        <li class="nav"><%=link_to "Page 1", "/home/page1" %></li>
-        <li class="nav"><%=link_to "Page 2", "/home/page2" %></li>    
+      <ul>
+        <li class="nav"><%=link_to "Sign Up", "/users/new" %></li>
+        <li class="nav"><%=link_to "Login", "/sessions/login" %></li>
+        <li class="nav" id="cart"><%=link_to "Cart", "/cart/show" %></li>
+      </ul>
     <% end %>
     </div>
   </div>

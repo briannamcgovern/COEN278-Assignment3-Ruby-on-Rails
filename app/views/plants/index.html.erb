@@ -4,13 +4,16 @@
   <tbody>
     <% @plants.each do |plant| %>
       <tr>
-        <td rowspan="2"><img src=<%= plant.image_url %> class="plant-img"></td>
+        <td rowspan="3"><img src=<%= plant.image_url %> class="plant-img"><%= link_to 'Details', 'plants#show' %></td>
         <td class="info" id="name"><%= plant.name %></td>
         <td class="info" id="price"><%= plant.price %></td>
         <td class="info" id="size"><%= plant.size %></td>
       </tr>
       <tr>
         <td colspan="3" id="descript"><%= plant.description %></td>
+      </tr>
+      <tr>
+        <td colspan="3" id="addCart"><%= button_to 'Add to Cart', :controller => "cart", :action => "add", :id => params[:id] %></td>
       </tr>
     <% end %>
   </tbody>

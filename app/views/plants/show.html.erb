@@ -1,29 +1,23 @@
 <p id="notice"><%= notice %></p>
+<div class='show-plant'>
+  <p>
+    <strong>Name:</strong>
+    <%= @plant.name %>
+  </p>
+  <p>
+    <strong>Size:</strong>
+    <%= @plant.size %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @plant.description %>
+  </p>
+  <p>
+    <strong>Price:</strong>
+    <%= @plant.price %>
+  </p>
+  <img src=<%= @plant.image_url %> class="plant-img-detail">
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @plant.name %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @plant.size %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @plant.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @plant.price %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @plant.image_url %>
-</p>
-
-<%= link_to 'Edit', edit_plant_path(@plant) %> |
-<%= link_to 'Back', plants_path %>
+<%= link_to 'Edit', 'edit_plant_path(@plant)' %> |
+<%= link_to 'Back', 'plants#index' %>
